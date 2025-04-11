@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carbon Footprint Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Carbon Footprint Calculator</h1>
@@ -11,7 +12,7 @@
     <form method="POST">
         <label for="product">Product name:</label><br>
         <input type="text" id="product" name="product"><br>
-        <label for="weight">Weight (kg)</label><br>
+        <label for="weight">Weight (kg):</label><br>
         <input type="text" id="weight" name="weight">
         <label for="distance">Distance travelled (km):</label><br>
         <input type="text" id="distance" name="distance"><br>
