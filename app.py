@@ -15,6 +15,7 @@ EMISSION_FACTORS = {
 @app.route('/', methods=['GET', 'POST'])
 def login():
     result = None
+    result_error = None
     error = None
     if request.method == 'POST':
         product = request.form['product'].strip().lower()
@@ -33,12 +34,12 @@ def login():
                     emissions += (distance * 0.1)
                     result = round(emissions, 2)
                 else:
-                    result = "Product is not valid"
+                    result_error = "Please enter a valid product"
 
             except ValueError:
                 error = "The weight and distance must be valid numbers."
 
-    return render_template('index.html', result=result, error=error)
+    return render_template('index.html', result=result, result_error=result_error, error=error)
 
 
 if __name__ == '__main__':
